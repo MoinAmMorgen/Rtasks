@@ -1,0 +1,13 @@
+<div class="task">
+        <div class="task-title">
+          <p>Clean room</p>
+        </div>
+        <div class="task-buttons">
+          <div class="button"></div>
+          <div class="button">
+            <span style="color: red; font-size: 45px" class="material-icons"
+              >close</span
+            >
+          </div>
+        </div>
+      </div>
