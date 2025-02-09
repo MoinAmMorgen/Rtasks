@@ -1,6 +1,41 @@
 // import { invoke } from "@tauri-apps/api/core";
 
-function addTask() {
+function getTaskTitle() {
+  const addButton = document.querySelector(".add-task");
+  if (addButton) {
+    addButton.className = "add-task-input";
+    let addIcon = document.querySelector(".add");
+    addIcon?.remove();
+    let inputForm = document.createElement("form");
+    inputForm.className = "task-input";
+    let textInput = document.createElement("input");
+    textInput.type = "text";
+    textInput.className = "task-input-text";
+    textInput.id = "task-input-text";
+
+    inputForm.appendChild(textInput);
+    addButton.appendChild(inputForm);
+
+    inputForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      let input: string = "";
+      input = (document.getElementById("task-input-text") as HTMLInputElement)
+        .value;
+      addTask(input);
+      inputForm.remove();
+      textInput.remove();
+      addIcon = document.createElement("span");
+      addIcon.className = "material-icons add";
+      addIcon.textContent = "add";
+      addButton.appendChild(addIcon);
+      addButton.className = "add-task";
+    });
+
+    return;
+  }
+}
+
+function addTask(inputTitle: string) {
   const mainDiv = document.querySelector(".container");
   const taskDiv = document.createElement("div");
   taskDiv.className = "task";
@@ -9,7 +44,7 @@ function addTask() {
   taskTitleDiv.className = "task-title";
 
   const title = document.createElement("p");
-  title.textContent = "Placeholder"; // TODO: Add functionality, so user can set their own title
+  title.textContent = inputTitle;
 
   const taskButtonsDiv = document.createElement("div");
   taskButtonsDiv.className = "task-buttons";
@@ -42,8 +77,8 @@ function removeTask(event: MouseEvent) {
   task.remove();
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".add-task")?.addEventListener("click", addTask);
+window.addEventListener("DOMContentLoaded", async () => {
+  document.querySelector(".add-task")?.addEventListener("click", getTaskTitle);
 });
 
 document.querySelectorAll<HTMLElement>(".close").forEach((button) => {

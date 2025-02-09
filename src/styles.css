@@ -19,7 +19,8 @@
   user-select: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -104,6 +105,11 @@ p {
   font-size: 45px;
 }
 
+.material-icons.add {
+  color: #000000;
+  font-size: 45px;
+}
+
 .update-button {
   display: flex;
   background-color: #eeeeee;
@@ -142,4 +148,42 @@ span {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+}
+
+.add-task-input {
+  display: flex;
+  width: 500px;
+  height: 65px;
+  border-radius: 32.5px;
+  background-color: #eeeeee;
+  color: #000000;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  cursor: text;
+}
+
+.task-input {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 65px;
+  background-color: transparent;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+.task-input-text {
+  display: flex;
+  text-align: center;
+  width: 500px;
+  height: 65px;
+  background-color: transparent;
+  border: none;
+  font-family: "Doppio One";
+  font-size: 20px;
+  outline: none;
 }
