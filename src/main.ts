@@ -12,9 +12,11 @@ function getTaskTitle() {
     textInput.type = "text";
     textInput.className = "task-input-text";
     textInput.id = "task-input-text";
+    textInput.autocomplete = "off";
 
     inputForm.appendChild(textInput);
     addButton.appendChild(inputForm);
+    textInput.focus();
 
     inputForm.addEventListener("submit", (event) => {
       event.preventDefault();
