@@ -16,7 +16,8 @@
         "title": "rtasks",
         "width": 500,
         "height": 800,
-        "resizable": false
+        "resizable": false,
+        "maximizable": false
       }
     ],
     "security": {
