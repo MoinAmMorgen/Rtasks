@@ -9,6 +9,10 @@ function isValidTask(chars: number): boolean {
     "task-input-text"
   ) as HTMLInputElement;
 
+  if (input.length === 0) {
+    return false
+  }
+
   if (input.length > chars) {
     console.log("title is longer triggered");
     let errorMessage = `Task title can only be ${chars} characters long`;
