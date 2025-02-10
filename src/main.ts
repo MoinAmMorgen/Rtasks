@@ -18,6 +18,17 @@ function getTaskTitle() {
     addButton.appendChild(inputForm);
     textInput.focus();
 
+
+    textInput.addEventListener('focusout', () => {
+      inputForm.remove();
+      textInput.remove();
+      addIcon = document.createElement("span");
+      addIcon.className = "material-icons add";
+      addIcon.textContent = "add";
+      addButton.appendChild(addIcon);
+      addButton.className = "add-task";
+    })
+
     inputForm.addEventListener("submit", (event) => {
       event.preventDefault();
       let input: string = "";
