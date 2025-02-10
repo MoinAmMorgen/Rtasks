@@ -157,11 +157,12 @@ span {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 .add-task-input {
   display: flex;
-  width: 500px;
+  width: 65px;
   height: 65px;
   border-radius: 32.5px;
   background-color: #eeeeee;
@@ -172,6 +173,7 @@ span {
   justify-content: center;
   align-items: center;
   cursor: text;
+  transition: all 0.3s ease;
 }
 
 .task-input {

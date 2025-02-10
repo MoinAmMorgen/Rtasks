@@ -10,7 +10,7 @@ function isValidTask(chars: number): boolean {
   ) as HTMLInputElement;
 
   if (input.length === 0) {
-    return false
+    return false;
   }
 
   if (input.length > chars) {
@@ -64,7 +64,7 @@ function handleFocusOut() {
   const textInput = document.getElementById(
     "task-input-text"
   ) as HTMLInputElement;
-  const addButton = document.querySelector(".add-task-input");
+  const addButton = document.getElementById("add-task-input");
 
   inputForm?.remove();
   textInput?.remove();
@@ -73,13 +73,26 @@ function handleFocusOut() {
   addIcon.className = "material-icons add";
   addIcon.textContent = "add";
   addButton?.appendChild(addIcon);
-  if (addButton) addButton.className = "add-task";
+
+  if (addButton) {
+    addButton.style.width = "65px";
+    addButton.style.height = "65px";
+    addButton.style.display = "none";
+    addButton.className = "add-task";
+    addButton.id = "add-task";
+    addButton.style.display = "flex";
+  }
 }
 
 function getTaskTitle() {
-  const addButton = document.querySelector(".add-task");
+  const addButton = document.getElementById("add-task");
   if (addButton) {
+    addButton.style.display = "none";
     addButton.className = "add-task-input";
+    addButton.id = "add-task-input";
+    addButton.style.display = "flex";
+    addButton.style.width = "500px";
+    addButton.style.height = "65px";
     let addIcon = document.querySelector(".add");
     addIcon?.remove();
     let inputForm = document.createElement("form");
@@ -94,6 +107,7 @@ function getTaskTitle() {
     inputForm.appendChild(textInput);
     addButton.appendChild(inputForm);
     textInput.focus();
+    textInput.style.cursor = "none";
 
     textInput.addEventListener("focusout", handleFocusOut);
 
