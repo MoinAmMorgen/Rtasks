@@ -23,6 +23,17 @@ function getTaskTitle() {
       let input: string = "";
       input = (document.getElementById("task-input-text") as HTMLInputElement)
         .value;
+      if (input.length > 20) {
+        let errorMessage = "Task title can only be 20 characters long";
+        (document.getElementById("task-input-text") as HTMLInputElement).value =
+          errorMessage;
+        setTimeout(() => {
+          (
+            document.getElementById("task-input-text") as HTMLInputElement
+          ).value = input;
+        }, 2000);
+        return;
+      }
       addTask(input);
       inputForm.remove();
       textInput.remove();
