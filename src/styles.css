@@ -110,6 +110,11 @@ p {
   font-size: 45px;
 }
 
+.material-icons.laptopmac {
+  color: orange;
+  font-size: 45px;
+}
+
 .update-button {
   display: flex;
   background-color: #eeeeee;
