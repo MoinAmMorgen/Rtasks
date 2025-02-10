@@ -131,6 +131,10 @@ span {
   cursor: pointer;
 }
 
+.hidden-cursor {
+  cursor: none;
+}
+
 .add-div {
   position: fixed;
   bottom: 0;

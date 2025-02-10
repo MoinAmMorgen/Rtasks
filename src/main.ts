@@ -15,10 +15,12 @@ function isValidTask(chars: number): boolean {
     inputElement.value = errorMessage;
     inputElement.removeEventListener("focusout", handleFocusOut);
     inputElement.disabled = true;
+    inputElement.classList.add("hidden-cursor");
 
     setTimeout(() => {
       inputElement.value = input;
       inputElement.disabled = false;
+      inputElement.classList.remove("hidden-cursor");
 
       inputElement.addEventListener("focusout", handleFocusOut);
       inputElement.focus();
@@ -36,10 +38,12 @@ function isValidTask(chars: number): boolean {
       inputElement.value = errorMessage;
       inputElement.removeEventListener("focusout", handleFocusOut);
       inputElement.disabled = true;
+      inputElement.classList.add("hidden-cursor");
 
       setTimeout(() => {
         inputElement.value = input;
         inputElement.disabled = false;
+        inputElement.classList.remove("hidden-cursor");
 
         inputElement.addEventListener("focusout", handleFocusOut);
         inputElement.focus();
